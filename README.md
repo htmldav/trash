@@ -21,6 +21,19 @@ foobar
 	cd /etc/systemd/system && \
 	nano node_exporter.service
 	
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+ExecStart=/usr/local/bin/node_exporter 
+
+[Install]
+WantedBy=default.target
+	
 /home/ubuntu/node_exporter-1.3.1.linux-amd64# cp node_exporter /usr/local/bin/
 useradd --no-create-home --shell /bin/false node_exporter
 
