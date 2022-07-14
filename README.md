@@ -267,6 +267,9 @@ git clone https://github.com/deviantony/docker-elk.git
 ELASTIC_VERSION=7.17.0
 docker-compose up -d --build
 
+git clone https://github.com/deviantony/docker-elk.git ELASTIC_VERSION=7.17.0 .env
+docker-compose up -d --build
+
 apt update -y && \
 apt install -y docker.io && \
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
@@ -282,3 +285,16 @@ cd prometheus
 kibana_1        "tags":["error","elasticsearch-service"],"pid":6,"message":"Unable to retrieve version information from Elasticsearch nodes. getaddrinfo ENOTFOUND elasticsearch"}
 
 docker-elk_elasticsearch_1   /bin/tini -- /usr/local/bi ...   Exit 137 
+
+https://github.com/hpcugent/logstash-patterns/blob/master/files/grok-patterns
+https://grokdebug.herokuapp.com/
+https://www.elastic.co/guide/en/logstash/current/plugins-filters-grok.html
+
+filter {
+        grok {
+            match => { "message" => "%{IP:clientip} (?:-|(%{WORD}.%{WORD})) %{USER:ident} \[%{HTTPDATE:timestamp}\] (?:%{WORD:verb} %{NOT
+SPACE:request}(?: HTTP/%{NUMBER:httpversion})?|%{DATA:rawrequest}) %{NUMBER:response}" }
+        }
+}
+
+%{IP:clientip} %{NOTSPACE:any1} %{NOTSPACE:any2} \[%{HTTPDATE:timestamp}\]
