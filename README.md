@@ -281,7 +281,7 @@ ELASTIC_VERSION=7.17.0
 docker-compose up -d --build
 
 git clone https://github.com/deviantony/docker-elk.git ELASTIC_VERSION=7.17.0 .env
-docker-compose up -d --build
+docker-compose up -d --build --force-recreate
 
 apt update -y && \
 apt install -y docker.io && \
