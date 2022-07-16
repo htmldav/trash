@@ -317,3 +317,5 @@ filter {
             match => { "message" => "%{IP:clientip} (?:-|(%{WORD}.%{WORD})) (?:-|(%{WORD}.%{WORD})) \[%{HTTPDATE:timestamp}\] \"%{WORD:method} %{URIPATHPARAM:request} (?:%{SPACE}HTTP/(%{NUMBER:http_version})?|%{DATA:rawrequest})\" %{NUMBER:http_status_code} (?:%{NUMBER:bytes}|-) \"%{GREEDYDATA:sessionId}\" \"(?:%{SPACE}HTTP/(%{NUMBER:http_versionAnother})?|%{DATA:rawrequestAnother})\"" }
         }
 }
+
+%{IP:clientip} (?:-|(%{WORD}.%{WORD})) (?:-|(%{WORD}.%{WORD})) \[%{HTTPDATE:timestamp}\] %{WORD:method} %{URIPATHPARAM:request} (?:%{SPACE}HTTP/(%{NUMBER:http_version})?|%{DATA:rawrequest}) %{NUMBER:http_status_code} (?:%{NUMBER:bytes}|-) %{SPACE}%{GREEDYDATA:sessionId} (?:%{SPACE}HTTP/(%{NUMBER:http_versionAnother})?|%{DATA:rawrequestAnother})
