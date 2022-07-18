@@ -321,3 +321,7 @@ filter {
 %{IP:clientip} (?:-|(%{WORD}.%{WORD})) (?:-|(%{WORD}.%{WORD})) \[%{HTTPDATE:timestamp}\] %{WORD:method} %{URIPATHPARAM:request} (?:%{SPACE}HTTP/(%{NUMBER:http_version})?|%{DATA:rawrequest}) %{NUMBER:http_status_code} (?:%{NUMBER:bytes}|-) %{SPACE}%{GREEDYDATA:sessionId} (?:%{SPACE}HTTP/(%{NUMBER:http_versionAnother})?|%{DATA:rawrequestAnother})
 
 7a49868c-b144-485a-ada4-b27b1544d7f7
+[root@docker ~]# nano /etc/docker/daemon.json
+{ "insecure-registries":["192.168.1.75:8123"] }
+
+[root@docker ~]# systemctl restart docker
