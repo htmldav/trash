@@ -21,6 +21,9 @@ foobar
 	cd /etc/systemd/system && \
 	nano node_exporter.service
 	
+https://blog.ruanbekker.com/blog/2020/04/25/nginx-metrics-on-prometheus-with-the-nginx-log-exporter/
+https://github.com/martin-helmich/prometheus-nginxlog-exporter
+	
 [Unit]
 Description=Node Exporter
 Wants=network-online.target
