@@ -24,6 +24,9 @@ foobar
 https://blog.ruanbekker.com/blog/2020/04/25/nginx-metrics-on-prometheus-with-the-nginx-log-exporter/
 https://github.com/martin-helmich/prometheus-nginxlog-exporter
 
+
+https://shashirhel5.blogspot.com/2021/01/prometheus-and-grafana.html
+
 myapp_http_response_count_total{service="myapp"}
 rate(myapp_http_response_count_total{service="myapp"}[$__interval])
 	
