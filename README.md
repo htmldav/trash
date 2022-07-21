@@ -1,4 +1,6 @@
 # trash
+https://shashirhel5.blogspot.com/2021/01/prometheus-and-grafana.html
+
 apt update -y && \
 apt install -y docker.io && \
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
