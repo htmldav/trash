@@ -3,6 +3,8 @@ https://shashirhel5.blogspot.com/2021/01/prometheus-and-grafana.html
 
 https://russianblogs.com/article/49521091176/
 
+https://medium.com/@shevtsovav/ready-for-scraping-nginx-metrics-nginx-vts-exporter-prometheus-grafana-26c14816ae7c
+
 apt update -y && \
 apt install -y docker.io && \
 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \
